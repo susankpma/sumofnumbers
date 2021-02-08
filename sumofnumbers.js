@@ -1,38 +1,38 @@
 function sumFor(list) {
-  let sum = 0;
+  let forsum = 0;
   for (let i = 0; i < list.length; i++) {
-    sum += list[i];
+    forsum += list[i];
   }
-  return sum;
+  return forsum;
 }
 
-console.log(sumFor([1, 3, 5]));
+console.log(sumFor([1, 3, 5, 7, 9]));
 
 function sumWhile(list) {
-  let sum = 0;
+  let whilesum = 0;
   let i = 0;
   while (i < list.length) {
-    sum += list[i];
+    whilesum += list[i];
     i++;
   }
-  return sum;
+  return whilesum;
 }
 
-console.log(sumWhile([1, 3, 5]));
+console.log(sumWhile([1, 2, 3]));
 
-function sumRecursion(num, n) {
+function sumRecursion(list, n) {
   if (n <= 0) {
     return 0;
   }
-  return sumRecursion(num, n - 1) + num[n - 1];
+  return sumRecursion(list, n - 1) + list[n - 1];
 }
 
-console.log(sumRecursion([1, 3, 5], 3));
+console.log(sumRecursion([1, 3, 5, 7, 9], 5));
 
 function sumTheSimpleWay(list) {
-  console.log(_.reduce(list, function (memo, num) {
+  return _.reduce(list, function(memo, num) {
     return memo + num;
-  }, 0));
+  }, 0);
 }
 
-sumTheSimpleWay([1, 3, 5]);
+console.log(sumTheSimpleWay([1, 3, 5, 7, 9]));
